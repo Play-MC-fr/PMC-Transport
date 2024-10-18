@@ -1,0 +1,3 @@
+vérifier que le calcul des distances fonctionne
+
+mettre les coordonnées de l'autoroute et du minimetro dans un autre fichier pour une modification simple
