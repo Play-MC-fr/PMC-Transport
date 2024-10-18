@@ -46,7 +46,7 @@ stations = {
     "RRSN - Chez ZuLynx": (0, 3151),
     "RRSN - Gare Sud 6": (0, 3824),
     "RRSN/L.Icaria - Icaria": (849, 4268),
-    "RRSN/L.GK - Cité Maya NS6": (-159, 3844),
+    "RRSN/L.GK - Cité Maya NS6": (-159, 3844)
 }
 
 
@@ -62,6 +62,7 @@ def x_command(value):
 def y_command(value):
     entry_y.delete(0, tk.END)
     entry_y.insert(0, str(round(value)))
+
 
 
 def find_closest_point():
@@ -91,7 +92,7 @@ def find_closest_point():
 
         closest_point_overworld = (closest_point[0] * 8, closest_point[1] * 8)
         min_distance_overworld = min_distance * 8
-        min_station_distance_scaled = min_station_distance * 8
+        min_station_distance_scaled = min_station_distance
 
         label_id.configure(text=f"{closest_point[2]} {closest_point[3]}", font=("Helvetica", 50, "bold"))
         label_coords.configure(text=closest_point_overworld, font=("Helvetica", 20, "bold"))
