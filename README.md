@@ -46,16 +46,6 @@ Then, open a terminal in `PMC-Transport` directory and install the dependencies.
 npm install
 ```
 
-### 3. Start the Backend Server
-
-Open a terminal in `PMC-Transport` directory and run the server on the port 3000 of your machine.
-
-```bash
-node backend/server.js
-```
-
-Then, the server is running, and you can try the API by accessing http://localhost:3000/api/stations.
-
-### 4. Test the Web Page
+### 3. Test the Web Page
 
 In `PMC-Transport/frontend` directory, open the `index.html` file in your browser :)
