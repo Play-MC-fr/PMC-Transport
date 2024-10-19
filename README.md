@@ -58,6 +58,6 @@ Then, the server is running on http://localhost:3000.
 
 You can try the API by accessing http://localhost:3000/api/stations.
 
-4. Test the Web Page
+### 4. Test the Web Page
 
 In `PMC-Transport/frontend` directory, open the `index.html` file in your browser :)
