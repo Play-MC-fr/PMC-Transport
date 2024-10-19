@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localisation des Stations Minetro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <img src="assets/pmc_icon_text.png" alt="Description de l'image" class="logo">
+    <h1>Trouve la station de Minetro la plus proche de toi !</h1>
+
+    <div class="coordinate-inputs">
+        <label for="x-coord"></label><input type="number" id="x-coord" placeholder="X">
+        <label for="y-coord"></label><input type="number" id="y-coord" placeholder="Y">
+    </div>
+
+    <button id="find-station-button">Trouve ta station</button>
+
+    <div id="station-info" class="station-info">
+        <div class="station-info-item">
+            <h4>Code</h4>
+            <p id="station-code">-</p>
+        </div>
+        <div class="station-info-item">
+            <h4>Nom</h4>
+            <p id="station-name">-</p>
+        </div>
+        <div class="station-info-item">
+            <h4>X</h4>
+            <p id="station-x">-</p>
+        </div>
+        <div class="station-info-item">
+            <h4>Y</h4>
+            <p id="station-y">-</p>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

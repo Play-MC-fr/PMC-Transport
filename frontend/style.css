@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Couleur de fond douce */
+    color: #333; /* Couleur du texte */
+}
+
+.coordinate-inputs {
+    display: flex; /* Utiliser flexbox pour aligner les éléments */
+    justify-content: center; /* Centrer horizontalement */
+    margin-bottom: 20px; /* Espacement en bas */
+    gap: 10px; /* Espacement entre les champs X et Y */
+}
+
+.coordinate-inputs input {
+    width: 150px; /* Largeur des champs de saisie */
+    padding: 10px; /* Remplissage à l'intérieur des champs */
+    margin-right: 0; /* Pas d'espacement à droite */
+    border: 1px solid #ddd; /* Bordure grise claire */
+    border-radius: 5px; /* Coins arrondis */
+    transition: border-color 0.3s; /* Transition douce pour la couleur de la bordure */
+    font-size: 16px; /* Augmente la taille du texte des champs de saisie */
+}
+
+.coordinate-inputs input:focus {
+    border-color: #007BFF; /* Couleur de bordure au focus */
+    outline: none; /* Retire l'effet de contour par défaut */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    padding: 20px;
+}
+
+.logo {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 20px; /* Espacement sous l'image */
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Espacement sous les titres */
+}
+
+label {
+    margin-top: 10px; /* Espacement au-dessus des labels */
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 400px; /* Largeur fixe pour les champs de saisie */
+    border: 1px solid #ddd; /* Bordure grise claire */
+    border-radius: 5px; /* Coins arrondis */
+    transition: border-color 0.3s; /* Transition douce pour la couleur de la bordure */
+}
+
+input:focus {
+    border-color: #007BFF; /* Couleur de bordure au focus */
+    outline: none; /* Retire l'effet de contour par défaut */
+}
+
+button {
+    padding: 10px;
+    width: 320px; /* Largeur fixe pour le bouton */
+    border: none;
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #007BFF; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Transition douce pour la couleur de fond */
+    font-size: 16px; /* Augmente la taille du texte du bouton */
+}
+
+button:hover {
+    background-color: #012f61; /* Couleur plus foncée au survol */
+}
+
+.station-info {
+    margin-top: 20px; /* Espacement au-dessus des informations de la station */
+    padding: 20px; /* Espacement à l'intérieur */
+    background-color: #fff; /* Fond blanc pour les infos */
+    border: 1px solid #ddd; /* Bordure grise claire */
+    border-radius: 5px; /* Coins arrondis */
+    display: flex; /* Utiliser flexbox pour l'alignement */
+    justify-content: space-between; /* Espacer les éléments de manière uniforme */
+    text-align: center; /* Centrer le texte à l'intérieur des éléments */
+    flex-wrap: wrap; /* Permettre aux éléments de passer à la ligne si nécessaire */
+}
+
+.station-info-item {
+    flex: 1; /* Chaque élément prend une part égale de l'espace disponible */
+    min-width: 120px; /* Largeur minimale pour éviter les retours à la ligne */
+    margin: 0 10px; /* Espacement horizontal entre les éléments */
+}
+
+.station-info-item h4 {
+    margin-bottom: 5px; /* Espacement en bas du titre */
+    font-size: 16px; /* Taille de police du titre */
+    color: #333; /* Couleur du texte */
+}
+
+.station-info-item p {
+    font-size: 16px; /* Taille de police du texte */
+    color: #555; /* Couleur du texte des informations */
+}
