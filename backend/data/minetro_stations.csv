@@ -1,0 +1,14 @@
+code,station,x,y
+SPAWN,Gare du Spawn,-221,172
+M0/LQ0,Dome,-437,270
+M0/LQ0,Quartier Ouest,-689,252
+M0/LQ0,Mairie du Quartier Ouest,-739,214
+RRSN,Chez Yomna,0,1019
+RRSN/2nd,Musée de Sirlinium,1582,1550
+RRSN,Gare Sud 4,0,1937
+RRSN,Gare Airom,0,2873
+RRSN/Inqui,L'Inquisition,-870,3169
+RRSN,Chez ZuLynx,0,3151
+RRSN,Gare Sud 6,0,3824
+RRSN/Icaria,Icaria,849,4268
+RRSN/GK,Cité Maya NS6,-159,3844
