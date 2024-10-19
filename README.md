@@ -54,8 +54,9 @@ Open a terminal in `PMC-Transport` directory and run the server on the port 3000
 node backend/server.js
 ```
 
-Then, the server is running on **http://localhost:3000**.
-You can try the API by accessing **http://localhost:3000/api/stations**.
+Then, the server is running on http://localhost:3000.
+
+You can try the API by accessing http://localhost:3000/api/stations.
 
 4. Test the Web Page
 
