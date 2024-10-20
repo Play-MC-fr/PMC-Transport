@@ -1,22 +1,5 @@
-let stations = [];
+import {loadMinetroStations, minetroStations} from "./dataManager.js";
 
-async function loadStations() {
-    const response = await fetch('data/minetro_stations.csv');
-    const data = await response.text();
-    const rows = data.split('\n').slice(1);
-
-    for (const row of rows) {
-        const [code, station, x, y] = row.split(',');
-        if (code && station) {
-            stations.push({
-                code: code.trim(),
-                station: station.trim(),
-                x: parseFloat(x.trim()),
-                y: parseFloat(y.trim())
-            });
-        }
-    }
-}
 
 function findClosestStation() {
     const x = parseFloat(document.getElementById('x-coord').value);
@@ -33,7 +16,7 @@ function findClosestStation() {
     let closestStation = null;
     let minDistance = Infinity;
 
-    for (const station of stations) {
+    for (const station of minetroStations) {
         const distance = Math.sqrt(Math.pow(station.x - x, 2) + Math.pow(station.y - y, 2));
         if (distance < minDistance) {
             minDistance = distance;
@@ -60,6 +43,6 @@ function updateUIWithStationInfo(data) {
     stationY.textContent = `${data.y}`;
 }
 
-loadStations().then(() => {
+loadMinetroStations().then(() => {
     document.getElementById('find-station-button').addEventListener('click', findClosestStation);
 });
