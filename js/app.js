@@ -54,10 +54,10 @@ function updateUIWithStationInfo(data) {
     const stationX = document.getElementById('station-x');
     const stationY = document.getElementById('station-y');
 
-    stationCode.textContent = `Code : ${data.code}`;
-    stationName.textContent = `Nom : ${data.station}`;
-    stationX.textContent = `X : ${data.x}`;
-    stationY.textContent = `Y : ${data.y}`;
+    stationCode.textContent = `${data.code}`;
+    stationName.textContent = `${data.station}`;
+    stationX.textContent = `${data.x}`;
+    stationY.textContent = `${data.y}`;
 }
 
 loadStations().then(() => {
