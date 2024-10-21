@@ -19,19 +19,57 @@ npm -v
 
 If not, install it.
 
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Commands</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
 **macOS**
+
+</td>
+<td>
+
 ```bash
 brew install node
 ```
 
+</td>
+</tr>
+<tr>
+<td>
+
 **Linux**
+
+</td>
+<td>
+
 ```bash
 sudo apt-get install nodejs
 sudo apt-get install npm
 ```
 
+</td>
+</tr>
+<tr>
+<td>
+
 **Windows**
+
+</td>
+<td>
+
 [Download Node.js](https://nodejs.org/en/download/)
+
+</td>
+</tr>
+</tbody>
+</table>
 
 Recheck if npm is installed on your machine.
 

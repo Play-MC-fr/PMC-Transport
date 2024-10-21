@@ -51,4 +51,54 @@ function updateUIWithStationInfo(data) {
     stationY.textContent = `${data.y}`;
 }
 
+async function findPlayerCoordinates() {
+    const player = document.getElementById('player-name').value;
+
+    if (!player) {
+        alert('Veuillez entrer un nom de joueur.');
+        console.error('Player name error : Empty player name');
+        return;
+    }
+
+    const apiUrl = 'http://localhost:3000/api/players/location';
+
+    try {
+        console.log(`Request sending with player name : ${player}`);
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-API-KEY': 'my-secret-api-key',
+            },
+            body: JSON.stringify({ player }),
+        });
+
+        const responseText = await response.text();
+        console.log('Response :', responseText);
+
+        if (!response.ok) {
+            console.error(`HTTP error: ${response.status} - ${response.statusText}`);
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        const data = JSON.parse(responseText);
+        console.log('Player location:', data);
+        updateUIWithPlayerLocation(data);
+    }
+    catch (error) {
+        console.error('Player location error:', error);
+        alert('Erreur lors de la recherche des coordonnées du joueur. Veuillez réessayer.');
+    }
+}
+
+function updateUIWithPlayerLocation(data) {
+    const xCoord = document.getElementById('x-coord');
+    const yCoord = document.getElementById('y-coord');
+
+    xCoord.value = data.x;
+    yCoord.value = data.y;
+}
+
 document.getElementById('find-station-button').addEventListener('click', findClosestStation);
+document.getElementById('find-player-coordinates').addEventListener('click', findPlayerCoordinates);
