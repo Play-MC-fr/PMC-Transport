@@ -8,11 +8,11 @@ exports.getAllStations = async (req, res) => {
         const stationsJSON = dfd.toJSON(stations, { format: 'column' });
         res.json(stationsJSON);
     } catch (err) {
-        res.status(500).json({ error: 'Minetro stations import error.' });
+        res.status(500).json({ error: 'Minetro stations import error' });
     }
 };
 
-exports.findClosestStation = async (req, res) => {
+exports.getClosestStation = async (req, res) => {
     try {
         const { x, y } = req.body;
 
@@ -39,7 +39,7 @@ exports.findClosestStation = async (req, res) => {
         });
 
         if (!closestStation) {
-            return res.status(404).json({ error: 'None station found error.' });
+            return res.status(404).json({ error: 'None station found error' });
         }
 
         res.json({
@@ -51,6 +51,6 @@ exports.findClosestStation = async (req, res) => {
         });
     } catch (err) {
         console.error('Station research error', err);
-        res.status(500).json({ error: 'Station research error.' });
+        res.status(500).json({ error: 'Station research error' });
     }
 };

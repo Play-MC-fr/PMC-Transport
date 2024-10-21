@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const stationsController = require('../controllers/stationsControllers');
+const stationsControllers = require('../controllers/stationsControllers');
 
-router.get('/', stationsController.getAllStations);
-router.post('/find', stationsController.findClosestStation);
+router.get('/', stationsControllers.getAllStations);
+router.post('/find', stationsControllers.getClosestStation);
 module.exports = router;
