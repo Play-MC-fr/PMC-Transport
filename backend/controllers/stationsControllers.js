@@ -1,11 +1,8 @@
 const dfd = require('danfojs-node');
-const path = require('path');
 
 exports.getAllStations = async (req, res) => {
     try {
-        const csvPath = path.join(__dirname, '../data/minetro_stations.csv');
-        const stations = await dfd.readCSV(csvPath);
-        const stationsJSON = dfd.toJSON(stations, { format: 'column' });
+        const stationsJSON = dfd.toJSON(req.stationsData, { format: 'column' });
         res.json(stationsJSON);
     } catch (err) {
         res.status(500).json({ error: 'Minetro stations import error' });
@@ -20,12 +17,10 @@ exports.getClosestStation = async (req, res) => {
             return res.status(400).json({ error: 'Input coordinates error.' });
         }
 
-        const csvPath = path.join(__dirname, '../data/minetro_stations.csv');
-        const stations = await dfd.readCSV(csvPath);
         let minDistance = Infinity;
         let closestStation = null;
 
-        stations.values.forEach(row => {
+        req.stationsData.values.forEach(row => {
             const stationX = row[2];
             const stationZ = row[3];
             const distance = Math.round(

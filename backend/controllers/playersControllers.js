@@ -1,6 +1,3 @@
-const dfd = require('danfojs-node');
-const path = require('path');
-
 exports.getPlayerLocation = async (req, res) => {
     try {
         const { player } = req.body;
