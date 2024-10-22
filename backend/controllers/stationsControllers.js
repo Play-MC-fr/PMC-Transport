@@ -46,7 +46,7 @@ exports.getClosestStation = async (req, res) => {
             code: closestStation[0],
             station: closestStation[1],
             x: closestStation[2],
-            y: closestStation[3],
+            z: closestStation[3],
             distance: minDistance
         });
     } catch (err) {
