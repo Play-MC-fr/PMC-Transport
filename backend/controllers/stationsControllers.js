@@ -14,9 +14,9 @@ exports.getAllStations = async (req, res) => {
 
 exports.getClosestStation = async (req, res) => {
     try {
-        const { x, y } = req.body;
+        const { x, z } = req.body;
 
-        if (x === undefined || y === undefined) {
+        if (x === undefined || z === undefined) {
             return res.status(400).json({ error: 'Input coordinates error.' });
         }
 
@@ -24,7 +24,7 @@ exports.getClosestStation = async (req, res) => {
             code: 'SPAWN',
             station: 'Gare du Spawn',
             x: 10,
-            y: 23,
+            z: 23,
             distance: 100
         });
     } catch (err) {
@@ -36,9 +36,9 @@ exports.getClosestStation = async (req, res) => {
 
 exports.getClosestStationOld = async (req, res) => {
     try {
-        const { x, y } = req.body;
+        const { x, z } = req.body;
 
-        if (x === undefined || y === undefined) {
+        if (x === undefined || z === undefined) {
             return res.status(400).json({ error: 'Input coordinates error.' });
         }
 
@@ -49,9 +49,9 @@ exports.getClosestStationOld = async (req, res) => {
 
         stations.values.forEach(row => {
             const stationX = row[2];
-            const stationY = row[3];
+            const stationZ = row[3];
             const distance = Math.round(
-                Math.sqrt(Math.pow(stationX - x, 2) + Math.pow(stationY - y, 2))
+                Math.sqrt(Math.pow(stationX - x, 2) + Math.pow(stationZ - z, 2))
             );
 
             if (distance < minDistance) {
