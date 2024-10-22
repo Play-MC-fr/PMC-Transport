@@ -8,7 +8,7 @@ async function findClosestStation() {
         return;
     }
 
-    const apiUrl = 'http://pmc-transport-production:8080/api/stations/find';
+    const apiUrl = 'https://pmc-transport-production.up.railway.app/api/stations/find';
 
     try {
         console.log(`Request sending with coordinates : X=${x}, Z=${z}`);
@@ -60,7 +60,7 @@ async function findPlayerCoordinates() {
         return;
     }
 
-    const apiUrl = 'http://pmc-transport-production:8080/api/players/location';
+    const apiUrl = 'https://pmc-transport-production.up.railway.app/api/players/location';
 
     try {
         console.log(`Request sending with player name : ${player}`);
