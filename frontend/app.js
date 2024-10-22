@@ -1,17 +1,17 @@
 async function findClosestStation() {
     const x = parseFloat(document.getElementById('x-coord').value);
-    const y = parseFloat(document.getElementById('y-coord').value);
+    const z = parseFloat(document.getElementById('z-coord').value);
 
-    if (isNaN(x) || isNaN(y)) {
+    if (isNaN(x) || isNaN(z)) {
         alert('Veuillez entrer des coordonnées valides.');
-        console.error('Coordinates error : X or Y is NaN');
+        console.error('Coordinates error : X or Z is NaN');
         return;
     }
 
-    const apiUrl = 'http://localhost:3000/api/stations/find';
+    const apiUrl = 'http://pmc-transport-production:8080/api/stations/find';
 
     try {
-        console.log(`Request sending with coordinates : X=${x}, Y=${y}`);
+        console.log(`Request sending with coordinates : X=${x}, Z=${z}`);
 
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -19,7 +19,7 @@ async function findClosestStation() {
                 'Content-Type': 'application/json',
                 'X-API-KEY': 'my-secret-api-key',
             },
-            body: JSON.stringify({ x, y }),
+            body: JSON.stringify({ x, z }),
         });
 
         const responseText = await response.text();
@@ -43,12 +43,12 @@ function updateUIWithStationInfo(data) {
     const stationCode = document.getElementById('station-code');
     const stationName = document.getElementById('station-name');
     const stationX = document.getElementById('station-x');
-    const stationY = document.getElementById('station-y');
+    const stationZ = document.getElementById('station-z');
 
     stationCode.textContent = `${data.code}`;
     stationName.textContent = `${data.station}`;
     stationX.textContent = `${data.x}`;
-    stationY.textContent = `${data.y}`;
+    stationZ.textContent = `${data.z}`;
 }
 
 async function findPlayerCoordinates() {
@@ -60,7 +60,7 @@ async function findPlayerCoordinates() {
         return;
     }
 
-    const apiUrl = 'http://localhost:3000/api/players/location';
+    const apiUrl = 'http://pmc-transport-production:8080/api/players/location';
 
     try {
         console.log(`Request sending with player name : ${player}`);

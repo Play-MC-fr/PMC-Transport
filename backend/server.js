@@ -9,18 +9,7 @@ const axesRoutes = require('./routes/axesRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const allowedIPs = ['104.28.99.216'];
-
-app.use((req, res, next) => {
-    const clientIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-    if (allowedIPs.includes(clientIP)) {
-        next();
-    } else {
-        res.status(403).json({ message: 'Accès refusé : IP non autorisée' });
-    }
-});
-
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['https://sukikui.github.io/PMC-Transport/'];
 const corsOptions = {
     origin: function (origin, callback) {
         if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -31,8 +20,7 @@ const corsOptions = {
     }
 };
 
-app.use(cors(corsOptions));
-
+app.use(cors);
 app.use(bodyParser.json());
 app.use('/api/stations', stationsRoutes);
 app.use('/api/players', playersRoutes);
