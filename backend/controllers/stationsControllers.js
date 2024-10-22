@@ -20,28 +20,6 @@ exports.getClosestStation = async (req, res) => {
             return res.status(400).json({ error: 'Input coordinates error.' });
         }
 
-        res.json({
-            code: 'SPAWN',
-            station: 'Gare du Spawn',
-            x: 10,
-            z: 23,
-            distance: 100
-        });
-    } catch (err) {
-        console.error('Station research error', err);
-        res.status(500).json({ error: 'Station research error' });
-    }
-};
-
-
-exports.getClosestStationOld = async (req, res) => {
-    try {
-        const { x, z } = req.body;
-
-        if (x === undefined || z === undefined) {
-            return res.status(400).json({ error: 'Input coordinates error.' });
-        }
-
         const csvPath = path.join(__dirname, '../data/minetro_stations.csv');
         const stations = await dfd.readCSV(csvPath);
         let minDistance = Infinity;
