@@ -94,10 +94,10 @@ async function findPlayerCoordinates() {
 
 function updateUIWithPlayerLocation(data) {
     const xCoord = document.getElementById('x-coord');
-    const yCoord = document.getElementById('y-coord');
+    const zCoord = document.getElementById('z-coord');
 
     xCoord.value = data.x;
-    yCoord.value = data.y;
+    zCoord.value = data.z;
 }
 
 document.getElementById('find-station-button').addEventListener('click', findClosestStation);

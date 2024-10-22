@@ -1,14 +1,11 @@
 {
-  "name": "pmc-transport",
+  "name": "pmc-transport-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/djezo93/Projets-play-mc.fr.git"
+    "url": "https://github.com/Sukikui/PMC-Transport.git"
   },
   "private": true,
   "dependencies": {

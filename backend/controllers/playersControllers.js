@@ -21,6 +21,12 @@ exports.getPlayerLocation = async (req, res) => {
 
         const responseText = await response.text();
         console.log('Response :', responseText);
+
+        if (!response.ok) {
+            console.error(`HTTP error: ${response.status} - ${response.statusText}`);
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
         res.json(JSON.parse(responseText));
 
     } catch (err) {

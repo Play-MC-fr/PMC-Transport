@@ -9,7 +9,18 @@ const axesRoutes = require('./routes/axesRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+const allowedOrigins = ['https://sukikui.github.io/PMC-Transport/'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/api/stations', stationsRoutes);
 app.use('/api/players', playersRoutes);

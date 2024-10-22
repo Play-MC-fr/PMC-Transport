@@ -1,0 +1,10 @@
+{
+  "name": "pmc-transport-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sukikui/PMC-Transport.git"
+  },
+  "private": true
+}
