@@ -1,3 +1,8 @@
+require('dotenv').config();
+
+const PMC_DOMAIN_URL = process.env.PMC_DOMAIN_URL;
+const PMC_API_KEY = process.env.PMC_API_KEY;
+
 exports.getPlayerLocation = async (req, res) => {
     try {
         const { player } = req.body;
@@ -6,13 +11,13 @@ exports.getPlayerLocation = async (req, res) => {
             return res.status(400).json({ error: 'Input player name error.' });
         }
 
-        const pmcApiUrl = `http://localhost:7070/api/location/${player}`;
+        const API_URL = `http://${PMC_DOMAIN_URL}/api/location/${player}`;
         console.log(`Request sending with player name : ${player}`);
 
-        const response = await fetch(pmcApiUrl, {
+        const response = await fetch(API_URL, {
             method: 'GET',
             headers: {
-                'X-API-KEY': 'API_KEY_123',
+                'X-API-KEY': `${PMC_API_KEY}`,
             },
         });
 
