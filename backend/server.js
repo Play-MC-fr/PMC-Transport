@@ -62,6 +62,5 @@ app.use('/api/axes', (req, res, next) => {
 
 app.use('/api/players', playersRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-});
+// No listening for Vercel serverless
+module.exports = app;

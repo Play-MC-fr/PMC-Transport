@@ -1,16 +1,14 @@
 {
   "name": "pmc-transport-backend",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Sukikui/PMC-Transport.git"
   },
-  "scripts": {
-    "start": "node server.js"
-  },
-  "private": true,
   "dependencies": {
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
