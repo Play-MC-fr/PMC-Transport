@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/Sukikui/PMC-Transport.git"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "private": true,
   "dependencies": {
     "body-parser": "^1.20.3",
