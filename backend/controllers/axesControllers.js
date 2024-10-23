@@ -2,8 +2,8 @@ const dfd = require('danfojs-node');
 
 exports.getAllAxes = async (req, res) => {
     try {
-        const stationsJSON = dfd.toJSON(req.stationsData, { format: 'column' });
-        res.json(stationsJSON);
+        const axesJSON = dfd.toJSON(req.axesData, { format: 'column' });
+        res.json(axesJSON);
     } catch (err) {
         res.status(500).json({ error: 'Nether axes import error.' });
     }

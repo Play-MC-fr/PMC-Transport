@@ -1,3 +1,5 @@
+const BACKEND_API_URL = 'https://pmc-transport.vercel.app'
+
 async function findClosestStation() {
     const x = parseFloat(document.getElementById('x-coord').value);
     const z = parseFloat(document.getElementById('z-coord').value);
@@ -8,7 +10,7 @@ async function findClosestStation() {
         return;
     }
 
-    const apiUrl = 'http://pmc-transport-production.up.railway.app/api/stations/find';
+    const apiUrl = `${BACKEND_API_URL}/api/stations/find`;
 
     try {
         console.log(`Request sending with coordinates : X=${x}, Z=${z}`);
@@ -60,7 +62,7 @@ async function findPlayerCoordinates() {
         return;
     }
 
-    const apiUrl = 'http://pmc-transport-production.up.railway.app/api/players/location';
+    const apiUrl = `${BACKEND_API_URL}/api/players/location`;
 
     try {
         console.log(`Request sending with player name : ${player}`);
