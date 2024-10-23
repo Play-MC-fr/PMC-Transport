@@ -5,21 +5,24 @@ const dfd = require('danfojs-node');
 const path = require('path');
 
 const stationsRoutes = require('./routes/stationsRoutes');
-const playersRoutes = require('./routes/playersRoutes');
+const portalsRoutes = require('./routes/portalsRoutes');
 const axesRoutes = require('./routes/axesRoutes');
+const playersRoutes = require('./routes/playersRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 let stationsData = null;
 let axesData = null;
+let portalsData = null;
 
 const loadCSV = async () => {
     try {
         const stationsPath = path.join(__dirname, 'data/minetro_stations.csv');
         const axesPath = path.join(__dirname, 'data/nether_axes.csv');
+        const portalsPath = path.join(__dirname, 'data/nether_portals.csv');
         stationsData = await dfd.readCSV(stationsPath);
         axesData = await dfd.readCSV(axesPath);
+        portalsData = await dfd.readCSV(portalsPath);
         console.log('CSV loaded successfully');
     } catch (err) {
         console.error('CSV loading error', err);
@@ -59,6 +62,11 @@ app.use('/api/axes', (req, res, next) => {
     req.axesData = axesData;
     next();
 }, axesRoutes);
+
+app.use('/api/portals', (req, res, next) => {
+    req.portalsData = portalsData;
+    next();
+}, portalsRoutes);
 
 app.use('/api/players', playersRoutes);
 
