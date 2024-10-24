@@ -5,7 +5,7 @@ exports.getAllStations = async (req, res) => {
         const stationsJSON = dfd.toJSON(req.stationsData, { format: 'column' });
         res.json(stationsJSON);
     } catch (err) {
-        res.status(500).json({ error: 'Minetro stations import error' });
+        res.status(500).json({ error: '[Controllers] Minetro stations import error' });
     }
 };
 
@@ -34,7 +34,7 @@ exports.getClosestStation = async (req, res) => {
         });
 
         if (!closestStation) {
-            return res.status(404).json({ error: 'None station found error' });
+            return res.status(404).json({ error: '[Controllers] None station found error' });
         }
 
         res.json({
@@ -46,6 +46,6 @@ exports.getClosestStation = async (req, res) => {
         });
     } catch (err) {
         console.error('Station research error', err);
-        res.status(500).json({ error: 'Station research error' });
+        res.status(500).json({ error: '[Controllers] Station research error' });
     }
 };

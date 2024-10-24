@@ -53,6 +53,20 @@ app.options('*', cors(corsOptions));
 
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send('PMC Transport API');
+});
+
+app.get('/api', (req, res) => {
+    res.send('PMC Transport API Endpoints' +
+        '\n/api/stations' +
+        '\n/api/stations/find' +
+        '\n/api/axes' +
+        '\n/api/portals' +
+        '\n/api/players/location'
+    );
+});
+
 app.use('/api/stations', (req, res, next) => {
     req.stationsData = stationsData;
     next();

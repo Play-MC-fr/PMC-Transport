@@ -5,6 +5,6 @@ exports.getAllPortals = async (req, res) => {
         const portalsJSON = dfd.toJSON(req.portalsData, { format: 'column' });
         res.json(portalsJSON);
     } catch (err) {
-        res.status(500).json({ error: 'Nether portals import error.' });
+        res.status(500).json({ error: '[Controllers] Nether portals import error.' });
     }
 };

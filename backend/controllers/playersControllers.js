@@ -10,7 +10,7 @@ exports.getPlayerLocation = async (req, res) => {
         if (player === undefined) {
             return res.status(400).json({ error: 'Input player name error.' });
         }
-    
+
         const API_URL = `http://${PMC_DOMAIN_URL}/api/location/${player}`;
         console.log(`Request sending with player name : ${player}`);
 
@@ -33,6 +33,6 @@ exports.getPlayerLocation = async (req, res) => {
 
     } catch (err) {
         console.error('Player location error', err);
-        res.status(500).json({ error: 'Player location error' });
+        res.status(500).json({ error: '[Controllers] Player location error' });
     }
 };
