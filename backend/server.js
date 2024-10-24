@@ -45,7 +45,6 @@ loadCSV();
 
 const corsOptions = {
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'X-API-KEY']
 };
 
 app.use(cors(corsOptions));
@@ -58,13 +57,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-    res.send('PMC Transport API Endpoints' +
-        '\n/api/stations' +
-        '\n/api/stations/find' +
-        '\n/api/axes' +
-        '\n/api/portals' +
-        '\n/api/players/location'
-    );
+    res.send('PMC Transport API');
 });
 
 app.use('/api/stations', (req, res, next) => {
